@@ -121,7 +121,7 @@ declare namespace micromatch {
 }
 
 interface Micromatch {
-    (files: string | string[], patterns: micromatch.Pattern | micromatch.Pattern[]): string[];
+    (files: string | ReadonlyArray<string>, patterns: micromatch.Pattern | ReadonlyArray<micromatch.Pattern>): string[];
 
     isMatch: {
         /**
@@ -149,12 +149,12 @@ interface Micromatch {
     /**
      * Returns a function that can be passed to Array#filter().
      */
-    filter(patterns: micromatch.Pattern | micromatch.Pattern[], opts?: micromatch.Options): micromatch.MatchFunction<any>;
+    filter(patterns: micromatch.Pattern | ReadonlyArray<micromatch.Pattern>, opts?: micromatch.Options): micromatch.MatchFunction<any>;
 
     /**
      * Returns true if a file path matches any of the given patterns.
      */
-    any(filePath: string, patterns: micromatch.Pattern | micromatch.Pattern[], opts?: micromatch.Options): boolean;
+    any(filePath: string, patterns: micromatch.Pattern | ReadonlyArray<micromatch.Pattern>, opts?: micromatch.Options): boolean;
 
     /**
      * Returns an object with a regex-compatible string and tokens.

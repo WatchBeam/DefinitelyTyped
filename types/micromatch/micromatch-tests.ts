@@ -8,8 +8,13 @@ var anyMatchFuncResult: mm.MatchFunction<any>;
 var globDataResult: mm.GlobData;
 var regExpResult: RegExp;
 
+var readonlyStrings: string[];
+
 // Usage.
 strArrResult = mm(['a.js', 'b.md', 'c.txt'], '*.{js,txt}');
+
+// Readonly strings and patterns.
+strArrResult = mm(readonlyStrings, readonlyStrings);
 
 // Multiple patterns.
 strArrResult = mm(['a.md', 'b.js', 'c.txt', 'd.json'], ['*.md', '*.txt']);
